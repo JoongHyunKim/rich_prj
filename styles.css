@@ -345,9 +345,15 @@ button:active {
 }
 
 .card-grid {
+  --card-width: 190px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--card-width);
+  gap: 16px;
+  justify-content: center;
+  align-items: start;
+  overflow-x: auto;
+  padding-bottom: 6px;
 }
 
 .tarot-card {
@@ -572,6 +578,10 @@ form.is-loading button.primary::after {
 }
 
 @media (max-width: 768px) {
+  .card-grid {
+    --card-width: 170px;
+  }
+
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
@@ -590,6 +600,12 @@ form.is-loading button.primary::after {
   .footer {
     flex-direction: column;
     gap: 6px;
+  }
+}
+
+@media (max-width: 520px) {
+  .card-grid {
+    --card-width: 150px;
   }
 }
 
