@@ -17,6 +17,27 @@ const readingSummaryEl = document.getElementById("reading-summary");
 const readingAdviceEl = document.getElementById("reading-advice");
 const readingActionEl = document.getElementById("reading-action");
 
+const navHomeEl = document.getElementById("nav-home");
+const navAboutEl = document.getElementById("nav-about");
+const navPrivacyEl = document.getElementById("nav-privacy");
+const navTermsEl = document.getElementById("nav-terms");
+const navContactEl = document.getElementById("nav-contact");
+
+const infoTitleEl = document.getElementById("info-title");
+const infoDescEl = document.getElementById("info-desc");
+const infoStepsTitleEl = document.getElementById("info-steps-title");
+const infoStep1El = document.getElementById("info-step-1");
+const infoStep2El = document.getElementById("info-step-2");
+const infoStep3El = document.getElementById("info-step-3");
+const infoSafetyTitleEl = document.getElementById("info-safety-title");
+const infoSafety1El = document.getElementById("info-safety-1");
+const infoSafety2El = document.getElementById("info-safety-2");
+const infoSafety3El = document.getElementById("info-safety-3");
+const infoFaqTitleEl = document.getElementById("info-faq-title");
+const infoFaq1El = document.getElementById("info-faq-1");
+const infoFaq2El = document.getElementById("info-faq-2");
+const infoFaq3El = document.getElementById("info-faq-3");
+
 const badgeEl = document.getElementById("badge");
 const heroTitleEl = document.getElementById("hero-title");
 const heroDescEl = document.getElementById("hero-desc");
@@ -43,6 +64,25 @@ const i18n = {
     badge: "TAROT SPREAD",
     heroTitle: "질문 하나, 카드 여러 장.",
     heroDesc: "조용히 묻고, 오늘의 방향을 작은 힌트로 받아보세요.",
+    navHome: "홈",
+    navAbout: "소개",
+    navPrivacy: "개인정보 처리방침",
+    navTerms: "이용약관",
+    navContact: "문의",
+    infoTitle: "이 사이트는 어떤 곳인가요?",
+    infoDesc: "짧은 질문을 적고 타로 스프레드를 통해 오늘의 흐름을 부드럽게 점검하는 셀프 리플렉션 도구입니다.",
+    infoStepsTitle: "이용 방법",
+    infoStep1: "지금 떠오르는 질문을 간단하게 적어주세요.",
+    infoStep2: "1/3/5장 스프레드를 선택하고 카드를 뽑습니다.",
+    infoStep3: "조언과 오늘의 작은 행동을 참고해 하루를 정리해보세요.",
+    infoSafetyTitle: "안전하게 사용하기",
+    infoSafety1: "이 결과는 엔터테인먼트와 자기 성찰을 위한 참고용입니다.",
+    infoSafety2: "중요한 결정은 전문가와 상의하세요.",
+    infoSafety3: "불편한 감정이 들면 쉬어가도 괜찮습니다.",
+    infoFaqTitle: "자주 묻는 질문",
+    infoFaq1: "카드 결과는 정답이 아니라 방향을 점검하는 힌트입니다.",
+    infoFaq2: "하루에 여러 번 뽑아도 괜찮지만 과몰입은 피해주세요.",
+    infoFaq3: "개인정보는 입력하지 않는 것을 권장합니다.",
     shuffle: "카드만 먼저 뽑기",
     scroll: "결과 보기",
     questionLabel: "지금 떠오르는 질문",
@@ -97,6 +137,25 @@ const i18n = {
     badge: "TAROT SPREAD",
     heroTitle: "One question, several cards.",
     heroDesc: "Ask softly and receive a small hint for today.",
+    navHome: "Home",
+    navAbout: "About",
+    navPrivacy: "Privacy",
+    navTerms: "Terms",
+    navContact: "Contact",
+    infoTitle: "What is this site?",
+    infoDesc: "A gentle self-reflection tool that helps you check today's flow with a short question and a tarot spread.",
+    infoStepsTitle: "How it works",
+    infoStep1: "Write a simple question that feels important right now.",
+    infoStep2: "Choose 1/3/5 cards and draw your spread.",
+    infoStep3: "Use the advice and small action to organize your day.",
+    infoSafetyTitle: "Use it safely",
+    infoSafety1: "Readings are for reflection and entertainment only.",
+    infoSafety2: "For major decisions, consult a professional.",
+    infoSafety3: "If you feel overwhelmed, it's okay to pause.",
+    infoFaqTitle: "FAQ",
+    infoFaq1: "These readings are hints for perspective, not absolute answers.",
+    infoFaq2: "Multiple draws are okay, but avoid over-reliance.",
+    infoFaq3: "We recommend not entering personal data.",
     shuffle: "Draw without a question",
     scroll: "See the reading",
     questionLabel: "Your question right now",
@@ -198,6 +257,25 @@ function updateTextContent() {
   badgeEl.textContent = texts.badge;
   heroTitleEl.textContent = texts.heroTitle;
   heroDescEl.textContent = texts.heroDesc;
+  navHomeEl.textContent = texts.navHome;
+  navAboutEl.textContent = texts.navAbout;
+  navPrivacyEl.textContent = texts.navPrivacy;
+  navTermsEl.textContent = texts.navTerms;
+  navContactEl.textContent = texts.navContact;
+  infoTitleEl.textContent = texts.infoTitle;
+  infoDescEl.textContent = texts.infoDesc;
+  infoStepsTitleEl.textContent = texts.infoStepsTitle;
+  infoStep1El.textContent = texts.infoStep1;
+  infoStep2El.textContent = texts.infoStep2;
+  infoStep3El.textContent = texts.infoStep3;
+  infoSafetyTitleEl.textContent = texts.infoSafetyTitle;
+  infoSafety1El.textContent = texts.infoSafety1;
+  infoSafety2El.textContent = texts.infoSafety2;
+  infoSafety3El.textContent = texts.infoSafety3;
+  infoFaqTitleEl.textContent = texts.infoFaqTitle;
+  infoFaq1El.textContent = texts.infoFaq1;
+  infoFaq2El.textContent = texts.infoFaq2;
+  infoFaq3El.textContent = texts.infoFaq3;
   shuffleButton.textContent = texts.shuffle;
   scrollButton.textContent = texts.scroll;
   questionLabelEl.textContent = texts.questionLabel;

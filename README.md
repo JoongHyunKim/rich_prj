@@ -4,10 +4,15 @@
 
 ## 구성
 - `index.html`: 메인 UI
+- `about.html`: 소개
+- `privacy.html`: 개인정보 처리방침
+- `terms.html`: 이용약관
+- `contact.html`: 문의
 - `styles.css`: 스타일
 - `app.js`: 클라이언트 로직
 - `shared/tarot.js`: 덱 데이터 + 해석 로직
 - `functions/reading.js`: Cloudflare Pages Functions 엔드포인트
+ - `robots.txt`: 크롤러 안내
 
 ## 로컬 실행
 간단한 정적 서버로 열면 됩니다.
@@ -27,6 +32,7 @@
 ## 유의
 - 서비스 성격상 엔터테인먼트 고지 문구를 유지하세요.
 - AdSense 적용 시 정책에 맞는 페이지 구성(개인정보 처리방침, 이용약관) 추가를 권장합니다.
+- `privacy.html` 및 `contact.html`의 이메일은 실제 연락 가능한 주소로 변경하세요.
 
 ## 폰트/이미지 출처
 - Nanum Gothic 폰트: SIL OFL 라이선스, `assets/fonts/OFL.txt` 참고
