@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>타로 스프레드 - 오늘의 힌트</title>
+  <meta name="description" content="질문을 적고 1/3/5장의 타로 카드로 오늘의 흐름을 확인해보세요." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <main class="shell">
+    <header class="hero">
+      <div class="top-bar">
+        <span class="badge" id="badge">TAROT SPREAD</span>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="pill is-active" type="button" data-lang="ko">한국어</button>
+          <button class="pill" type="button" data-lang="en">English</button>
+        </div>
+      </div>
+      <h1 id="hero-title">질문 하나, 카드 여러 장.</h1>
+      <p id="hero-desc">조용히 묻고, 오늘의 방향을 작은 힌트로 받아보세요.</p>
+      <div class="hero-actions">
+        <button class="ghost" type="button" id="shuffle">카드만 먼저 뽑기</button>
+        <button class="link" type="button" id="scroll-to-reading">결과 보기</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <form id="tarot-form">
+        <label for="question" id="question-label">지금 떠오르는 질문</label>
+        <textarea id="question" name="question" maxlength="200" placeholder="예: 이직을 해도 될까?"></textarea>
+        <div class="spread-select">
+          <span class="label" id="spread-label">스프레드 선택</span>
+          <div class="pill-group" role="group" aria-label="스프레드 선택">
+            <button class="pill" type="button" data-spread="1">1장</button>
+            <button class="pill is-active" type="button" data-spread="3">3장</button>
+            <button class="pill" type="button" data-spread="5">5장</button>
+          </div>
+          <p class="spread-note" id="spread-note">과거-현재-미래의 흐름을 살펴봅니다.</p>
+        </div>
+        <div class="meta">
+          <span id="count">0/200</span>
+          <span class="hint" id="hint">짧게 적을수록 카드 해석이 또렷해요.</span>
+        </div>
+        <button class="primary" type="submit" id="draw-button">카드 뽑기</button>
+        <p class="disclaimer" id="disclaimer">이 콘텐츠는 자기 성찰을 돕는 엔터테인먼트입니다. 중요한 결정은 전문가와 상의하세요.</p>
+      </form>
+    </section>
+
+    <section class="result" id="reading-section" aria-live="polite">
+      <div class="card-grid" id="card-grid"></div>
+      <div class="reading">
+        <div class="reading-header">
+          <span class="badge soft" id="reading-badge">TODAY</span>
+          <h3 id="reading-headline">오늘의 메시지</h3>
+        </div>
+        <p id="reading-summary">질문을 입력하고 카드를 뽑아주세요.</p>
+        <div class="spread-list" id="spread-list"></div>
+        <div class="reading-grid">
+          <div class="reading-box">
+            <h4 id="advice-title">조언</h4>
+            <p id="reading-advice">당신의 선택을 돕는 한 문장을 보여드립니다.</p>
+          </div>
+          <div class="reading-box">
+            <h4 id="action-title">오늘의 작은 행동</h4>
+            <p id="reading-action">하루에 적용할 수 있는 작은 행동을 제안합니다.</p>
+          </div>
+        </div>
+        <div class="reading-actions">
+          <button class="ghost" type="button" id="copy-result">결과 복사</button>
+          <span class="status" id="status"></span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span id="footer-left">© 2026 One Card Tarot</span>
+      <span id="footer-right">Made for gentle focus</span>
+    </footer>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
+
