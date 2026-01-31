@@ -306,7 +306,7 @@ function createCardElement({ card, reading, positionLabel, placeholder = false }
   const title = placeholder ? texts.placeholderTitle : state.locale === "en" ? card.name : card.nameKr;
   const subtitle = placeholder
     ? texts.placeholderSubtitle
-    : `${state.locale === "en" ? card.nameKr : card.name} · ${reading.orientationLabel}`;
+    : `${state.locale === "en" ? card.name : card.nameKr} · ${reading.orientationLabel}`;
   const keywords = placeholder
     ? [texts.placeholderKeyword]
     : state.locale === "en"
